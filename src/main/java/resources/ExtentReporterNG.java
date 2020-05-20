@@ -15,6 +15,7 @@ public class ExtentReporterNG {
 		extent.setSystemInfo("Tester","Jiva");
 		return extent;
 		
+		
 	}
 
 }

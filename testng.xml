@@ -3,20 +3,14 @@
 <!-- <suite name="Suite" parallel="tests"> -->
 
 
-<suite name="Suite" parallel="tests">
+<suite name="Suite">
 <listeners>
 <listener class-name="Framework.Listeners"></listener>
 </listeners>
   <test thread-count="5" name="Test">
     <classes>
       <class name="Framework.backendLoginTest"/>
-      <!-- <class name="Framework.frontEndLoginTest"/> -->
+      <class name="Framework.frontEndLoginTest"/> 
     </classes>
   </test> 
-  
-  <test thread-count="5" name="Test2">
-    <classes>
-      <class name="Framework.frontEndLoginTest"/>
-    </classes>
-  </test>
 </suite> 

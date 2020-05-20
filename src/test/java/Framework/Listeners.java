@@ -16,13 +16,16 @@ import resources.ExtentReporterNG;
 
 public class Listeners extends Base implements ITestListener {
 
-	ExtentReports extent=ExtentReporterNG.getReportObject();
-	ExtentTest test;
-	ThreadLocal<ExtentTest> extentTest=new ThreadLocal<ExtentTest>();
+	//public  ExtentReports extent=ExtentReporterNG.getReportObject();
+	////public  ExtentTest test;
+	//ThreadLocal<ExtentTest> extentTest=new ThreadLocal<ExtentTest>();
+	//Base bb=new Base();
+		
 	@Override
 	public void onTestStart(ITestResult result) {
 		// TODO Auto-generated method stub
 		 test=extent.createTest(result.getMethod().getMethodName());
+		 test.info("<<< Test case start: "+result.getMethod().getMethodName()+" >>>");
 		 extentTest.set(test);
 	}
 
@@ -35,6 +38,7 @@ public class Listeners extends Base implements ITestListener {
 
 	@Override
 	public void onTestFailure(ITestResult result) {
+		extentTest.get().log(Status.FAIL, result.getMethod().getMethodName()+" : Failed");
 		extentTest.get().fail(result.getThrowable());
 		WebDriver driver=null;		
 		// TODO Auto-generated method stub

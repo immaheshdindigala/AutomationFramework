@@ -28,8 +28,7 @@ public class frontendLoginPage {
 				
 	}
 	public WebElement getSignInButton() {
-		return driver.findElement(signInButton);
-				
+		return driver.findElement(signInButton);		
 	}
 
 }
